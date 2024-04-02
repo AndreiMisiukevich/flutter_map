@@ -333,12 +333,6 @@ class MapOptions {
 class FitBoundsOptions {
   final EdgeInsets padding;
   final double maxZoom;
-  @Deprecated(
-      'This property is unused and will be removed in the next major release.')
-
-  /// TODO: remove this property in the next major release.
-  final double? zoom;
-  final bool inside;
 
   /// By default calculations will return fractional zoom levels.
   /// If this parameter is set to [true] fractional zoom levels will be round
@@ -348,9 +342,6 @@ class FitBoundsOptions {
   const FitBoundsOptions({
     this.padding = EdgeInsets.zero,
     this.maxZoom = 17.0,
-    @Deprecated('This property is unused and will be removed in the next major release.')
-        this.zoom,
-    this.inside = false,
     this.forceIntegerZoomLevel = false,
   });
 }

@@ -28,9 +28,9 @@ class FMNetworkNoRetryImageProvider
           ..userAgent = null;
 
   @override
-  ImageStreamCompleter loadBuffer(
+  ImageStreamCompleter loadImage(
     FMNetworkNoRetryImageProvider key,
-    DecoderBufferCallback decode,
+    ImageDecoderCallback decode,
   ) {
     //ignore: close_sinks
     final StreamController<ImageChunkEvent> chunkEvents =
@@ -56,7 +56,7 @@ class FMNetworkNoRetryImageProvider
 
   Future<Codec> _loadAsync({
     required FMNetworkNoRetryImageProvider key,
-    required DecoderBufferCallback decode,
+    required ImageDecoderCallback decode,
     required StreamController<ImageChunkEvent> chunkEvents,
     bool useFallback = false,
   }) async {

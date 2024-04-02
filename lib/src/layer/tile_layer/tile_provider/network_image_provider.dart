@@ -27,8 +27,8 @@ class FMNetworkImageProvider extends ImageProvider<FMNetworkImageProvider> {
   }) : httpClient = httpClient ?? RetryClient(http.Client());
 
   @override
-  ImageStreamCompleter loadBuffer(
-      FMNetworkImageProvider key, DecoderBufferCallback decode) {
+  ImageStreamCompleter loadImage(
+      FMNetworkImageProvider key, ImageDecoderCallback decode) {
     return OneFrameImageStreamCompleter(_loadWithRetry(key, decode),
         informationCollector: () sync* {
       yield ErrorDescription('Image provider: $this');
@@ -43,7 +43,7 @@ class FMNetworkImageProvider extends ImageProvider<FMNetworkImageProvider> {
 
   Future<ImageInfo> _loadWithRetry(
     FMNetworkImageProvider key,
-    DecoderBufferCallback decode, [
+    ImageDecoderCallback decode, [
     bool useFallback = false,
   ]) async {
     assert(key == this);
