@@ -19,7 +19,9 @@ dependencies:
   latlong2: ^0.9.1
   meta: ^1.11.0
   polylabel: ^1.0.1
-  positioned_tap_detector_2: ^1.0.4
   proj4dart: ^2.1.0
   tuple: ^2.0.0
   vector_math: ^2.1.2
+  positioned_tap_detector_2:
+    git:
+      url: https://github.com/AndreiMisiukevich/flutter-positioned-tap-detector.git
